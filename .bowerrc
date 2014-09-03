@@ -1,0 +1,6 @@
+{
+  "directory": "client/vendor",
+  "scripts": {
+    "postinstall": "grunt wiredep"
+  }
+}
