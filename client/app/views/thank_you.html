@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Энергосберегающие системы</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!--[if lte IE 8]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
+    <script src="js/general.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css">
+
+    <script type="text/javascript" src="js/typeface-0.15.js"></script>
+    <script type="text/javascript" src="js/neo_sans_pro_medium.typeface.js"></script>
+    <script type="text/javascript" src="js/neo_sans_pro_regular.typeface.js"></script>
+    <script type="text/javascript" src="js/neo_sans_pro_bold.typeface.js"></script>
+
+    <script type="text/javascript" src="jcarousel/style/js/jquery.jcarousel.js"></script>
+    <link rel="stylesheet" media="all" href="jcarousel/style/type/puritan.css" />
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function sendData()
+            {
+                window.location.replace('/obschiy/');
+            }
+            function modalWin(id){
+                var maskHeight = $(document).height();
+                var maskWidth = $(window).width();
+                $('#mask').css({'width':maskWidth,'height':maskHeight});
+                $('#mask').fadeIn(1000);
+                $('#mask').fadeTo("slow",0.8);
+                var winH = $(window).height();
+                var winW = $(window).width();
+                $(id).css('top',  winH/2-$(id).height()/2);
+                $(id).css('left', winW/2-$(id).width()/2);
+                $(id).fadeIn(2000);
+            }
+
+            if (window.location.search.indexOf("success=sendtoyou") > 0){
+                modalWin('#popupBlock');
+                $('.myclose').click(function () {
+                    $("#popupBlock").hide();
+                    sendData();
+                });
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.fancybox-media').fancybox({
+                openEffect  : 'none',
+                closeEffect : 'none',
+                helpers : {
+                    media : {}
+                }
+            });
+            $('.object_fancy').fancybox();
+        });
+    </script>
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div id="popupBlock" class="myup"> <a id="setCookie" class="myclose"></a>Ваша заявка успешно отправлена!</div>
+<div class="header_wrap">
+    <div class="header">
+        <div class="logo_top">
+            <a href="/obschiy/"><img src="img/logo.png" alt=""></a>
+            <p class="logo_descript typeface-js">Производство и поставка<br> светодиодного осветительного<br> оборудования по всей России</p>
+        </div>
+        <div class="counter_top">
+            <div class="counter_head typeface-js">Сэкономили электроэнергии, кВт/ч</div>
+            <div class="counter_div">
+                <div class="counter_number typeface-js">7</div>
+                <div class="counter_number typeface-js">4</div>
+                <div class="counter_number typeface-js">5</div>
+                <div class="counter_number typeface-js">3</div>
+                <div class="counter_number typeface-js">8</div>
+                <div class="counter_number typeface-js">3</div>
+                <div class="counter_number typeface-js">8</div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <div class="phone_top">
+            <div class="phone_top_head typeface-js">Бесплатный звонок по всей России</div>
+            <div class="phone_top_number typeface-js">8 800 <b>555 04 49</b></div>
+            <div class="phone_top_number typeface-js">8 495 <b>215 57 79</b></div>
+            <div class="callback_button"><a href="#callback_form" class="fancybox-media"><!--<img src="img/callback.png" alt="">-->Заказать звонок</a> </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+<div class="conteiner">
+    <div class="reviews_wrap thanks_wrap">
+        <div class="thanks_inner">
+            <div class="thanks">
+                <div class="thanks_left">
+                    <p class="thanks_head typeface-js">Спасибо за проявленный интерес!</p>
+                    <p>Мы свяжемся с Вами в ближайшее время.<br>
+                        Время работы нашего офиса - c понедельника по пятницу с 9:00 до 18:00 по Московскому времени</p>
+                    <p>Если у Вас есть срочный вопрос, звоните нам по телефонам:<br>
+                        8 (800) 555-04-49 (бесплатно по России)<br>
+                        8 (495) 215-57-79</p>
+                    <div class="thanks_img">
+                        <img src="img/thanks_face.png" alt="">
+                        <div class="thanks_txt_and_img">
+                            <p>С уважением,<br>
+                                Павел Овсянников,<br>
+                                директор ООО “Энергосберегающие Системы”</p>
+                            <img src="img/thanks_podpis.png" alt="">
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <!-- <div class="thanks_right">
+                    <iframe width="460" height="315" src="//www.youtube.com/embed/FUf3fq-q3rc?rel=0&wmode=transparent" frameborder="0" allowfullscreen frameborder="0" wmode="Opaque"></iframe>
+                </div> -->
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer_wrap_thank">
+    <div class="footer_thank">
+        <div class="footer_thank_txt">© 2012, ООО «Энергосберегающие  системы» —  производство и поставка светодиодного осветительного оборудования по всей России<br>Все права защищены.</div>
+        <div class="footer_thank_logo"><img src="img/logo_thank.png" alt=""></div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+
+
+
+<div id="callback_form">
+    <form id="callback" class="callback_form" action="./callback.php" method="post" >
+        <div class="callback_head">Заказать обратный звонок</div>
+        <input type="text" name="firstname" class="input_form required defaultInvalidName" value="" placeholder="Введите имя"/>
+        <input type="text" name="number" class="input_form required defaultInvalidNumber number" value="" placeholder="Введите телефон"/>
+        <input type="text" name="mail" class="input_form input_hid" value="" placeholder="Введите mail"/>
+        <input type="text" name="email" class="input_form input_hid" value="" placeholder="Введите e-mail"/>
+        <input class="form_button" type="submit" value="" onclick="yaCounterXXXXXXXX.reachGoal('skidka'); return true;"/>
+        <div style="clear: both"></div>
+    </form>
+</div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter23390383 = new Ya.Metrika({id:23390383,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/23390383" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-42996733-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+		<!-- Google Code for &#1047;&#1072;&#1103;&#1074;&#1082;&#1072; Conversion Page -->
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 957425567;
+		var google_conversion_language = "en";
+		var google_conversion_format = "3";
+		var google_conversion_color = "ffffff";
+		var google_conversion_label = "5Z5pCImchAcQn8_EyAM";
+		var google_conversion_value = 0;
+		var google_remarketing_only = false;
+		/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+		</script>
+		<noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/957425567/?value=0&amp;label=5Z5pCImchAcQn8_EyAM&amp;guid=ON&amp;script=0"/>
+		</div>
+		</noscript>
+		<!-- Код тега ремаркетинга Google -->
+		<!--------------------------------------------------
+		С помощью тега ремаркетинга запрещается собирать информацию, по которой  
+		можно идентифицировать личность пользователя. Также запрещается размещать  
+		тег на страницах с контентом деликатного характера. Подробнее об этих  
+		требованиях и о настройке тега читайте на странице  
+		http://google.com/ads/remarketingsetup.
+		--------------------------------------------------->
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 957425567;
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+		</script>
+		<script type="text/javascript"  
+		src="//www.googleadservices.com/pagead/conversion.js">
+		</script>
+		<noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt=""  
+		src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/957425567/?value=0&amp;guid=ON&amp;script=0"/>
+		</div>
+		</noscript>
+</body>
+</html>

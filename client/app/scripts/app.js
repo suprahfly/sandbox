@@ -1,2 +1,1 @@
-var x = '123';
-console.log(123);
+var sandbox = angular.module('sandbox', []);

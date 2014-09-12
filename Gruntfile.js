@@ -31,44 +31,14 @@ module.exports = function (grunt) {
     assets: config.assets,
     components: config.components,
 
-    // Watch config
-    watch: {
-      config: {
-        files: ['Gruntfile.js'],
-        reload: true
-      },
-      styles: {
-        options: {
-          // spawn: true,
-          // interrupt: true,
-          // event: ['added', 'changed', 'deleted'],
-          // atBegin: false,
-          // livereload: true,
-          // livereloadOnError: false
-        },
-        files: ['<%= app.styles %>/**/*.{sass, scss}'],
-        tasks: ['styles']
-      },
-      livereload: {
-        files: [
-          '<%= app.root %>/index.html',
-          '<%= app.views %>/{,*/}*.html',
-          '<%= app.scripts %>/**/*.js',
-          '<%= app.tmp %>/styles/{,*/}*.css'
-        ],
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        }
-      }
-    },
-
-    // Sass config
+    // Sass compile
     sass: {
       dev: {
         options: {
           // style: 'nested',
           precision: 4,
-          lineNumbers: true
+          lineNumbers: true,
+          sourcemap: 'inline'
         },
         files: [{
           expand: true,
@@ -81,13 +51,13 @@ module.exports = function (grunt) {
       }
     },
 
-    // Autoprefixer config
+    // Prefixing css
     autoprefixer: {
       dev: {
         options: {
           browsers: ['> 3%'],
           cascade: true,
-          map: true
+          // map: true
         },
         src: ['<%= app.tmp %>/styles/*.css'],
       }
@@ -117,12 +87,12 @@ module.exports = function (grunt) {
     //   }
     // },
 
-    // Clean config
+    // Clean folders
     clean: {
       temp: '.tmp'
     },
 
-    // Concurrent config
+    // Concurrent tasks
     concurrent: {
       options: {
         // logConcurrentOutput: false
@@ -130,7 +100,7 @@ module.exports = function (grunt) {
       server: ['wiredep', 'styles']
     },
 
-    // Server config
+    // Run http-server
     connect: {
       options: {
         port: 9000,
@@ -155,11 +125,49 @@ module.exports = function (grunt) {
       }
     },
 
-    // Wire Bower Dependencies
+    // Wire Bower dependencies
     wiredep: {
       dev: {
-        src: '<%= app.views %>/index.html',
-        ignorePath: '../../'
+        src: '<%= app.root %>/index.html',
+        ignorePath: /\.\.\/?/g
+      }
+    },
+
+    // Watch config
+    watch: {
+      config: { // Watch Gruntfile for changes
+        files: ['Gruntfile.js'],
+        reload: true
+      },
+      bower: { // Watch Bower for new dependencies
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
+      styles: {
+        options: { // Watch style files for changes
+        },
+        files: ['<%= app.styles %>/**/*.{sass, scss}'],
+        tasks: ['styles']
+      },
+      livereload: {
+        files: [ // Files firing reload event on save
+          '<%= app.root %>/index.html',
+          '<%= app.views %>/{,*/}*.html',
+          '<%= app.scripts %>/**/*.js',
+          '<%= app.tmp %>/styles/{,*/}*.css'
+        ],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+          // spawn: true,
+          // interrupt: true,
+          // event: ['added', 'changed', 'deleted'],
+          // atBegin: false,
+          // livereload: true,
+          // livereloadOnError: false
+        }
       }
     }
   });

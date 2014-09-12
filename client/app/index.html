@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="sandbox"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- bower:css -->
+        <link rel="stylesheet" href="vendor/pure/pure.css" />
         <!-- endbower -->
+
+        <!-- Components:start --><!--
+        <link rel="stylesheet" href="vendor/pure/grids-responsive.css" /> -->
+        <!-- Components:end -->
 
         <!-- App styles:start -->
         <link rel="stylesheet" href="styles/app.css">
@@ -27,13 +32,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <h1>Hello World</h1>
-    <img src="images/action.png" alt="">
 
     <!-- bower:js -->
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/angular-animate/angular-animate.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-inflector/dist/angular-inflector.min.js"></script>
+    <script src="vendor/angular-restmod/dist/angular-restmod.min.js"></script>
     <!-- endbower -->
 
 
