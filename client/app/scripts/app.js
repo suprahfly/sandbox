@@ -1,11 +1,32 @@
-function Calculator() {
-}
+(function () {
+  'use strict';
 
-Calculator.prototype.addition = function(num, num2) {
-  return num + num2;
-};
+  angular.module('app', [
+    'ngRoute',
+    'ngAnimate',
+    'particlesHeader'
+  ]);
 
-Calculator.prototype.division = function(num1, num2) {
-  if (num2 === 0) throw new Error('Calculator does not allow division by zero');
-  return Math.round(num1 / num2);
-};
+  angular
+    .module('app')
+    .config(['$routeProvider', '$locationProvider', config]);
+
+  function config($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'main.html',
+        title: 'main'
+      })
+      .when('/particles', {
+        templateUrl: 'particles.html',
+        title: 'Particles'
+      })
+      .otherwise({redirectTo: '/'});
+
+    // $locationProvider.html5Mode({
+    //   enabled: true,
+    //   requireBase: false
+    // });
+
+  }
+}());
