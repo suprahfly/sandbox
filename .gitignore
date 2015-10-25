@@ -1,0 +1,6 @@
+.git
+.sass-cache
+.tmp
+tmp
+dist
+node_modules
